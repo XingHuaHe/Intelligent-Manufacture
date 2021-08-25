@@ -1,0 +1,351 @@
+﻿<UserControl x:Class="IntelligentManufactureApplication.Views.UserControlViews.ManufacturingState"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:IntelligentManufactureApplication.Views.UserControlViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="950">
+
+    <Grid Background="#002171">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="350" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="10 5">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <UniformGrid Columns="4" Grid.Row="1">
+                <materialDesign:Card Grid.Row="1" Background="#03a9f4" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Padding="0" Width="200" Height="120">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignHeadline5TextBlock}">
+                            焊接车间
+                        </TextBlock>
+                        <Separator Grid.Row="1" Style="{StaticResource MaterialDesignLightSeparator}" />
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="16 0 16 8" HorizontalAlignment="Right">
+                            <materialDesign:PopupBox HorizontalAlignment="Right" Padding="2 0 2 0">
+                                <StackPanel>
+                                    <Button Content="More" />
+                                    <Button Content="Options" />
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Grid.Row="1" Background="#FF7000" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Padding="0" Width="200" Height="120">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignHeadline5TextBlock}">
+                            机加车间
+                        </TextBlock>
+                        <Separator Grid.Row="1" Style="{StaticResource MaterialDesignLightSeparator}" />
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="16 0 16 8" HorizontalAlignment="Right">
+                            <materialDesign:PopupBox HorizontalAlignment="Right" Padding="2 0 2 0">
+                                <StackPanel>
+                                    <Button Content="More" />
+                                    <Button Content="Options" />
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+                <materialDesign:Card Grid.Row="1" Background="#FFC100" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Padding="0" Width="200" Height="120">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignHeadline5TextBlock}">
+                            喷漆车间
+                        </TextBlock>
+                        <Separator Grid.Row="1" Style="{StaticResource MaterialDesignLightSeparator}" />
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="16 0 16 8" HorizontalAlignment="Right">
+                            <materialDesign:PopupBox HorizontalAlignment="Right" Padding="2 0 2 0">
+                                <StackPanel>
+                                    <Button Content="More" />
+                                    <Button Content="Options" />
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+                <materialDesign:Card Grid.Row="1" Background="#59E6B5" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Padding="0" Width="200" Height="120">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignHeadline5TextBlock}">
+                            总装车间
+                        </TextBlock>
+                        <Separator Grid.Row="1" Style="{StaticResource MaterialDesignLightSeparator}" />
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="16 0 16 8" HorizontalAlignment="Right">
+                            <materialDesign:PopupBox HorizontalAlignment="Right" Padding="2 0 2 0">
+                                <StackPanel>
+                                    <Button Content="More" />
+                                    <Button Content="Options" />
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+            </UniformGrid>
+        </Grid>
+
+        <UniformGrid Columns="4" Grid.Row="1" Margin="20 10 20 0">
+            <Border Background="White" Grid.RowSpan="2"  Margin="20 0 0 0" CornerRadius="10">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                </Border.Effect>
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="机床占用率" Foreground="#596B75" FontSize="18"/>
+                    <Border Width="100" Height="100" BorderThickness="6" BorderBrush="#717171" CornerRadius="100" Grid.Row="1"/>
+                    <UniformGrid Columns="2" Grid.Row="2">
+                        <Border BorderThickness="0 0 1 0" BorderBrush="DarkGray">
+                            <StackPanel HorizontalAlignment="Center">
+                                <TextBlock Text="55%" FontSize="22"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border Width="10" Height="10" Background="#59E6B5"/>
+                                    <TextBlock Text="Used" Margin="5 0 0 0"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock Text="45%" FontSize="22"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="10" Height="10" Background="#FF7900"/>
+                                <TextBlock Text="Unused" Margin="5 0 0 0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </UniformGrid>
+                </Grid>
+            </Border>
+
+            <Border Background="White" Grid.Column="1" Grid.RowSpan="2" Margin="20 0 0 0"  CornerRadius="10">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                </Border.Effect>
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="使用率" Foreground="#596B75" FontSize="18"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="4543" FontSize="16" VerticalAlignment="Bottom"/>
+                            <TextBlock Text="&#xe612;" Foreground="#22AC03" FontSize="22" FontFamily="Fonts/#iconfont"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <Canvas Grid.Row="1">
+                        <Path Stroke="#717171" StrokeThickness="3">
+                            <Path.Data>
+                                <PathGeometry >
+                                    <PathFigure IsClosed="False"  StartPoint="0,120">
+                                        <BezierSegment Point1="30,30" Point2="50,90" Point3="60,40" />
+                                        <BezierSegment Point1="70,10" Point2="90,30" Point3="100,40" />
+                                        <BezierSegment Point1="110,50" Point2="130,60" Point3="160,0" />
+                                    </PathFigure>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+
+                    <UniformGrid Columns="9" Grid.Row="2" VerticalAlignment="Center">
+                        <TextBlock Text="9" HorizontalAlignment="Center"/>
+                        <TextBlock Text="10" HorizontalAlignment="Center"/>
+                        <TextBlock Text="11" HorizontalAlignment="Center"/>
+                        <TextBlock Text="12" HorizontalAlignment="Center"/>
+                        <TextBlock Text="13" HorizontalAlignment="Center"/>
+                        <TextBlock Text="14" HorizontalAlignment="Center"/>
+                        <TextBlock Text="15" HorizontalAlignment="Center"/>
+                        <TextBlock Text="16" HorizontalAlignment="Center"/>
+                        <TextBlock Text="17" HorizontalAlignment="Center"/>
+                    </UniformGrid>
+
+                    <TextBlock Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="7">
+                        Times(s)
+                    </TextBlock>
+                </Grid>
+            </Border>
+
+            <Grid Margin="10 0 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border Margin="5 0 5 5" Background="White" CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="周机床使用数" VerticalAlignment="Center" Foreground="#717171" Margin="10 0 0 0"/>
+                        <TextBlock Text="36,254" Grid.Row="1" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="22"/>
+                        <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+                            <TextBlock Text="&#xe78b;" Foreground="#59E6B5" FontFamily="Fonts/#iconfont"/>
+                            <TextBlock Text="5.27%" Foreground="#59E6B5" />
+                            <TextBlock Margin="5 0 0 0" Text="Since last weekend"  Foreground="#A4ADB2" />
+                        </StackPanel>
+                    </Grid>
+
+                </Border>
+            </Grid>
+
+            <Grid Margin="10 0 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border Margin="5 0 5 5" Background="White" CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="周增长率" VerticalAlignment="Center" Foreground="#717171" Margin="10 0 0 0"/>
+                        <TextBlock Text="5,543" Grid.Row="1" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="22"/>
+                        <Border CornerRadius="5" Width="30" Height="30" Background="#D5F8EC" Grid.Row="1" HorizontalAlignment="Right" 
+                                        VerticalAlignment="Top" Margin="0 0 5 0">
+                            <TextBlock Text="&#xe501;" FontSize="18" Foreground="#59E6B5" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#iconfont"/>
+                        </Border>
+
+                        <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+                            <TextBlock Text="&#xe78b;" Foreground="Red" FontFamily="Fonts/#iconfont"/>
+                            <TextBlock Text="1.08%" Foreground="Red" />
+                            <TextBlock Margin="5 0 0 0" Text="Since last Weekend"  Foreground="#A4ADB2" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Margin="5 10 5 0" Background="White" CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="月增长率" VerticalAlignment="Center" Foreground="#717171" Margin="10 0 0 0"/>
+                        <TextBlock Text="+ 30.56%" Grid.Row="1" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="22"/>
+                        <Border CornerRadius="5" Width="30" Height="30" Background="#D5F8EC" Grid.Row="1" HorizontalAlignment="Right" 
+                                        VerticalAlignment="Top" Margin="0 0 5 0">
+                            <TextBlock Text="&#xe501;" FontSize="18" Foreground="#59E6B5" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#iconfont"/>
+                        </Border>
+
+                        <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+                            <TextBlock Text="&#xe78b;" Foreground="#59E6B5" FontFamily="Fonts/#iconfont"/>
+                            <TextBlock Text="5.27%" Foreground="#59E6B5" />
+                            <TextBlock Margin="5 0 0 0" Text="Since last month"  Foreground="#A4ADB2" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+        </UniformGrid>
+
+        <Grid Margin="30 10 30 10" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Sales Report" FontSize="22" Foreground="#596B75" Margin="10 0 0 0" VerticalAlignment="Center"/>
+
+            <Border Background="White" Grid.Row="1" CornerRadius="10" Margin="10 0 10 0">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Width="120" Height="120" CornerRadius="120" BorderThickness="6" BorderBrush="#717171" HorizontalAlignment="Center">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="55%" FontSize="30" HorizontalAlignment="Center" Foreground="#717171"/>
+                            <TextBlock Text="Mobile Sales"/>
+                        </StackPanel>
+                    </Border>
+
+                    <UniformGrid Rows="3" Columns="2" Grid.Column="1" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" Margin="0 10 10 10">
+                            <Border Width="10" Height="10" Background="Red" CornerRadius="10"/>
+                            <TextBlock Text="Desktop  $3213  30%" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" >
+                            <Border Width="10" Height="10" Background="#B03060" CornerRadius="10"/>
+                            <TextBlock Text="Tablet  $3213  30%" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" >
+                            <Border Width="10" Height="10" Background="#59E6B5" CornerRadius="10"/>
+                            <TextBlock Text="Call  $3213  30%" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="10" Height="10" Background="#FFC100" CornerRadius="10"/>
+                            <TextBlock Text="Mobile  $3213  30%" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" >
+                            <Border Width="10" Height="10" Background="#C0C7CA" CornerRadius="10"/>
+                            <TextBlock Text="Mobile mini  $3213  30%" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" >
+                            <Border Width="10" Height="10" Background="#9400D3" CornerRadius="10"/>
+                            <TextBlock Text="other  $3213  30%" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        </StackPanel>
+
+                    </UniformGrid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

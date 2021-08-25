@@ -1,0 +1,44 @@
+﻿<Window x:Class="IntelligentManufactureApplication.Views.DialogViews.NCPreviewDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:IntelligentManufactureApplication.Views.DialogViews"
+        mc:Ignorable="d"
+        Title="NCPreviewDialog" Height="650" Width="850" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Height="30" Background="#121F40" MouseMove="WindowsMove">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0">
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" Height="30" Width="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Click="Close_Click">
+                    <materialDesign:PackIcon Kind="Close" />
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <materialDesign:ColorZone Grid.Row="1" Mode="Standard" Padding="5 5 5 5" CornerRadius="2" Panel.ZIndex="1" Margin="5 10" Height="610" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="FileNameTextBlock" Text="文件名称：" FontSize="20" Height="30" VerticalAlignment="Center"/>
+                <Separator Grid.Row="1"/>
+                <RichTextBox Grid.Row="2" x:Name="EditRichTextBox" Height="580" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" IsReadOnly="True"/>
+                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5 2">
+                    <Button x:Name="CancelButton" Content="取消" Width="60" Height="30" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="CancelButton_Click"/>
+                    <Button x:Name="PassButton" Content="通过" Width="60" Height="30" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="PassButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </materialDesign:ColorZone>
+    </Grid>
+</Window>

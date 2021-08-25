@@ -1,0 +1,50 @@
+﻿<Window x:Class="IntelligentManufactureApplication.Views.DialogViews.ProcessNewRow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:IntelligentManufactureApplication.Views.DialogViews"
+        mc:Ignorable="d"
+        Title="ProcessNewRow" Height="400" Width="350" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    
+    <Grid>
+        <materialDesign:ColorZone Mode="Standard"  Padding="0 0 0 10" Height="394" Width="342" Margin="0 3" Background="LightYellow" CornerRadius="10" Panel.ZIndex="1" materialDesign:ShadowAssist.ShadowDepth="Depth2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="40 20 0 0">
+                        <TextBlock Text="工序号：" VerticalAlignment="Center"/>
+                        <TextBox x:Name="ProcessIDTextBox" Width="200" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Left" materialDesign:HintAssist.Hint="工序号" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="40 20 0 0">
+                        <TextBlock Text="工序名称：" VerticalAlignment="Center"/>
+                        <TextBox x:Name="ProcessNameTextBox" Width="200" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Left" materialDesign:HintAssist.Hint="工序名称" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="40 20 0 0">
+                        <TextBlock Text="适用机床：" VerticalAlignment="Center"/>
+                        <TextBox x:Name="ApplicabilityTextBox" Width="200" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Left" materialDesign:HintAssist.Hint="适用机床" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="40 20 0 0">
+                        <TextBlock Text="工时：" VerticalAlignment="Center"/>
+                        <TextBox x:Name="HoursTextBox" Width="200" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Left" materialDesign:HintAssist.Hint="工时" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="40 20 0 0">
+                        <TextBlock Text="工时单价：" VerticalAlignment="Center"/>
+                        <TextBox x:Name="UnitPriceTextBox" Width="200" Margin="10 20 10 10" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Left" materialDesign:HintAssist.Hint="工时单价" />
+                    </StackPanel>
+                </StackPanel>
+
+                <UniformGrid Grid.Row="1" Columns="2">
+                    <Button x:Name="CancelButton" Content="取消" Width="60" Height="30" Margin="0 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="CancelButton_Click" />
+                    <Button x:Name="OkButton" Content="确定" Width="60" Height="30" Margin="0 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="OkButton_Click" />
+                </UniformGrid>
+            </Grid>
+        </materialDesign:ColorZone>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+fileName:E:\Personal Files\IntelligentManufactureSolution\files\Cg_2020_08_10_06_48_34\CT_2020_08_10_06_53_06\C_2020_08_10_06_53_32\PT_2020_08_10_06_54_08\P_2020_08_10_06_54_16\2020_08_10_06_55_14\NC\Proc_10_06_57_17_7769\1.NC
+file count:1
+File.Exists(filename):True
+发送文件名:WJMC=1.NC;
+length:743
+count:1
+datafield.Length:452
+datafield.Length:291
+isSend:False
+fileName:E:\Personal Files\IntelligentManufactureSolution\files\Cg_2020_08_10_06_48_34\CT_2020_08_10_06_53_06\C_2020_08_10_06_53_32\PT_2020_08_10_06_54_08\P_2020_08_10_06_54_16\2020_08_10_06_55_14\NC\Proc_10_06_57_17_7769\1.NC
+file count:1
+File.Exists(filename):True
+发送文件名:WJMC=1.NC;
+length:743
+count:1
+datafield.Length:452
+datafield.Length:291
+isSend:False
+fileName:E:\Personal Files\IntelligentManufactureSolution\files\Cg_2020_08_10_06_48_34\CT_2020_08_10_06_53_06\C_2020_08_10_06_53_32\PT_2020_08_10_06_54_08\P_2020_08_10_06_54_16\2020_08_10_06_55_14\NC\Proc_10_06_57_17_7769\1.NC
+file count:1
+File.Exists(filename):True
+发送文件名:WJMC=1.NC;
+length:743
+count:1
+datafield.Length:452
+datafield.Length:291
+isSend:False

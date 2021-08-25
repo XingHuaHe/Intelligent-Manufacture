@@ -1,0 +1,20 @@
+﻿IntelligentManufactureApplication
+
+
+winexe
+C#
+.cs
+E:\Personal Files\IntelligentManufactureSolution\IntelligentManufactureApplication\obj\Debug\
+IntelligentManufactureApplication
+none
+false
+DEBUG;TRACE
+E:\Personal Files\IntelligentManufactureSolution\IntelligentManufactureApplication\App.xaml
+141109300409
+
+50478024750
+157-1057316791
+Views\DialogViews\CraftPreviewDialog.xaml;Views\DialogViews\DrawingPreviewDialog.xaml;Views\DialogViews\NCPreviewDialog.xaml;Views\DialogViews\NewRowDialog.xaml;Views\DialogViews\NotificationWindow.xaml;Views\DialogViews\ProcessNewRow.xaml;Views\DialogViews\RenameTreeView.xaml;Views\LoginWindow.xaml;Views\MainWindow.xaml;Views\UserControlViews\DNCManagment.xaml;Views\UserControlViews\FilesDataGrid.xaml;Views\UserControlViews\FilesDetail.xaml;Views\UserControlViews\FilesManagment.xaml;Views\UserControlViews\ManufacturingState.xaml;
+
+False
+

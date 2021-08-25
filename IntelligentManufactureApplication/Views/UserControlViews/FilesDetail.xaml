@@ -1,0 +1,568 @@
+﻿<UserControl x:Class="IntelligentManufactureApplication.Views.UserControlViews.FilesDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:IntelligentManufactureApplication.Views.UserControlViews"
+             xmlns:service="clr-namespace:IntelligentManufactureApplication.Services"
+             mc:Ignorable="d" >
+
+    <Grid x:Name="OutGrid" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="ProductListDataGrid" Margin="2 2" 
+                    SelectionUnit="FullRow" SelectionMode="Single" HeadersVisibility="All"  BorderThickness="1"
+                    CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" 
+                    GridLinesVisibility="Horizontal"  CanUserReorderColumns="False"
+                    CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False"
+                    HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Hidden" >
+            <DataGrid.Resources>
+                <service:BindingProxy x:Key="DataContextProxy" Data="{Binding}" />
+            </DataGrid.Resources>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="PreviewMenuItem" Header="预览"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+
+            <DataGrid.Columns>
+                <materialDesign:DataGridTextColumn Header="物料编号" IsReadOnly="True"  ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="MaterialsNumber">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="图号" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="DrawingID">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="名称" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="ProductName">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="材质" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="Makings">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="材质代码" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="MakingsNumber">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="标准" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="Standard">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="热处理代号" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="HeatTreatmentCode">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="材料屈服强度" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="MaterialStrength">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="检验组别" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="CheckGroup">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="热处理硬度" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="HeattreatmentStrength">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="来源" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="Source">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="类型" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="Type">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="规格" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="Specification">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="单件毛胚尺寸" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="BlankSize">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="下斜尺寸" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="CuttingSize">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="司太立及氮化" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="StelliteAndNitriding">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+
+                <materialDesign:DataGridTextColumn Header="备注" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding Path="Remarks">
+                            <Binding.ValidationRules>
+                                <service:NotEmptyValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <DataGrid x:Name="ProcessingGrid" Margin="2 2" 
+                              SelectionUnit="FullRow" SelectionMode="Single" HeadersVisibility="All"  BorderThickness="1"
+                              CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" 
+                              GridLinesVisibility="Horizontal"  CanUserReorderColumns="False"
+                              CanUserResizeColumns="False" CanUserResizeRows="False"
+                              HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto" SelectionChanged="ProcessingGrid_SelectionChanged">
+                    <DataGrid.Resources>
+                        <service:BindingProxy x:Key="DataContextProxy" Data="{Binding}" />
+                    </DataGrid.Resources>
+
+                    <DataGrid.Columns >
+                        <materialDesign:DataGridTextColumn Header="工序号"  ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="ProcessNumber">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+
+                        <materialDesign:DataGridTextColumn Header="工序名称" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="ProcessName">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+
+                        <materialDesign:DataGridTextColumn Header="适用机床" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="Applicability">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+
+                        <materialDesign:DataGridTextColumn Header="工时(h)" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="Hours">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+
+                        <materialDesign:DataGridTextColumn Header="工时单价" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="UnitPrice">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="DeletedProcessButton" Content="删除" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="DeletedProcessButton_Click" />
+                    <Button x:Name="AddProcessButton" Content="添加" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="AddProcessButton_Click" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="340"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0 2 2 0">
+                    <DataGrid x:Name="DrawingGrid" Height="140"
+                        SelectionUnit="FullRow" SelectionMode="Single" HeadersVisibility="All"  BorderThickness="1"
+                        CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" 
+                        GridLinesVisibility="Horizontal"  CanUserReorderColumns="False"
+                        CanUserResizeColumns="False" CanUserResizeRows="False"
+                        HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto">
+                        <DataGrid.Resources>
+                            <service:BindingProxy x:Key="DataContextProxy" Data="{Binding}" />
+                        </DataGrid.Resources>
+
+                        <DataGrid.Columns>
+                            <materialDesign:DataGridTextColumn Header="图纸名称" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="DrawingName">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+
+                            <materialDesign:DataGridTextColumn Header="版本号" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="FileVersion">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+
+                            <materialDesign:DataGridTextColumn Header="审核状态" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="CheckState">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+
+                            <materialDesign:DataGridTextColumn Header="审核人" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="CheckedUser">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+
+                            <materialDesign:DataGridTextColumn Header="审核时间" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="CheckTime">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+                            
+                            <materialDesign:DataGridTextColumn Header="创建人" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="ModifiedUser">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+
+                            <materialDesign:DataGridTextColumn Header="创建时间" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="ModifiedTimee">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 2 0 2">
+                        <!--<Button x:Name="DrawingPrintButton" Content="打印" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black"/>-->
+                        <Button x:Name="DrawingPreviewButton" Content="预览" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="DrawingPreviewButton_Click"/>
+                        <Button x:Name="DrawingDeletedButton" Content="删除" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="DrawingDeletedButton_Click" />
+                        <Button x:Name="DrawingImportButton" Content="导入" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="DrawingImportButton_Click" />
+                    </StackPanel>
+
+                    <DataGrid x:Name="CraftGrid" Height="140"
+                            SelectionUnit="FullRow" SelectionMode="Single" HeadersVisibility="All"  BorderThickness="1"
+                            CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" 
+                            GridLinesVisibility="Horizontal"  CanUserReorderColumns="False"
+                            CanUserResizeColumns="False" CanUserResizeRows="False"
+                            HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto">
+                        <DataGrid.Resources>
+                            <service:BindingProxy x:Key="DataContextProxy" Data="{Binding}" />
+                        </DataGrid.Resources>
+
+                        <DataGrid.Columns>
+                            <materialDesign:DataGridTextColumn Header="工艺卡名称" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="CraftName">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+
+                            <materialDesign:DataGridTextColumn Header="版本号" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="FileVersion">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+
+                            <materialDesign:DataGridTextColumn Header="审核状态" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="CheckState">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+
+                            <materialDesign:DataGridTextColumn Header="审核人" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="CheckedUser">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+
+                            <materialDesign:DataGridTextColumn Header="审核时间" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="CheckTime">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+
+                            <materialDesign:DataGridTextColumn Header="创建人" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="ModifiedUser">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+
+                            <materialDesign:DataGridTextColumn Header="创建时间" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                <materialDesign:DataGridTextColumn.Binding>
+                                    <Binding Path="ModifiedTimee">
+                                        <Binding.ValidationRules>
+                                            <service:NotEmptyValidationRule />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </materialDesign:DataGridTextColumn.Binding>
+                            </materialDesign:DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 2 0 0">
+                        <!--<Button x:Name="CraftPrintButton" Content="打印" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black"/>-->
+                        <Button x:Name="CraftPreviewButton" Content="预览" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="CraftPreviewButton_Click" />
+                        <Button x:Name="CraftDeletedButton" Content="删除" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="CraftDeletedButton_Click" />
+                        <Button x:Name="CraftImportButton" Content="导入" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="CraftImportButton_Click" />
+                    </StackPanel>
+                </StackPanel>
+
+                <DataGrid Grid.Row="1" x:Name="DNCDataGrid" Margin="0 0 0 2"
+                        SelectionUnit="FullRow" SelectionMode="Single" HeadersVisibility="All"  BorderThickness="1"
+                        CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" 
+                        GridLinesVisibility="Horizontal"  CanUserReorderColumns="False"
+                        CanUserResizeColumns="False" CanUserResizeRows="False"
+                        HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto">
+                    <DataGrid.Resources>
+                        <service:BindingProxy x:Key="DataContextProxy" Data="{Binding}" />
+                    </DataGrid.Resources>
+
+                    <DataGrid.Columns>
+                        <materialDesign:DataGridTextColumn Header="程序名称" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="NCProgramName">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+
+                        <materialDesign:DataGridTextColumn Header="版本号" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="FileVersion">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+
+                        <materialDesign:DataGridTextColumn Header="审核状态" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="CheckState">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+
+                        <materialDesign:DataGridTextColumn Header="审核人" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="CheckedUser">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+
+                        <materialDesign:DataGridTextColumn Header="审核时间" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="CheckTime">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+
+                        <materialDesign:DataGridTextColumn Header="创建人" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="ModifiedUser">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+
+                        <materialDesign:DataGridTextColumn Header="创建时间" ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                            <materialDesign:DataGridTextColumn.Binding>
+                                <Binding Path="ModifiedTimee">
+                                    <Binding.ValidationRules>
+                                        <service:NotEmptyValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </materialDesign:DataGridTextColumn.Binding>
+                        </materialDesign:DataGridTextColumn>
+                        
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <!--<Button x:Name="PrintNCButton" Content="打印" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black"/>-->
+                    <Button x:Name="PreviewNCButton" Content="预览" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="PreviewNCButton_Click" />
+                    <Button x:Name="DeletedNCButton" Content="删除" Width="60" Height="25" Margin="5 0 5 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="DeletedNCButton_Click" />
+                    <Button x:Name="AddNCButton" Content="导入" Width="60" Height="25" Margin="5 0 7 0" BorderBrush="#0A0C22" Background="Transparent" Foreground="Black" Click="AddNCButton_Click" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
